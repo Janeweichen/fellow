@@ -1,0 +1,17 @@
+<nav class=" flex justify-between items-center bg-orange-600 text-orange-100 text-xl px-4 py-2">
+    <div class="ml-2">
+      <i class="fab fa-trello mr-1"></i>
+      <%= link_to 'Fellow',root_path %>
+    </div>
+
+  <div>
+    <% if user_signed_in? %>
+      <span class="mr-2"><%= current_user.email %></span>
+      <%= link_to '登出', destroy_user_session_path, method: 'delete', class:'user-button' %>
+    <% else %>
+      <%= link_to '登入', new_user_session_path, class: ' user-button mr-2'%>
+      <%= link_to '註冊', new_user_registration_path, class: 'user-button mr-2'%>
+    <% end %>
+  </div>
+</nav>
+

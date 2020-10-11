@@ -1,0 +1,29 @@
+// root
+.body {
+  @apply .bg-orange-300;
+}
+
+.field {
+  .label {   
+    @apply .block .font-semibold .mb-1;
+  }
+  .input {
+    @apply .px-20 .py-2 .text-lg .border .border-gray-500 .rounded;
+
+    &:focus{
+      @apply .outline-none ;
+    }
+  }
+}
+.button {
+    @apply .bg-orange-400 .text-gray-100 .px-5 .py-2 .rounded;
+}
+
+nav {
+  .user-button {
+    @apply .px-3 .py-2 .bg-orange-500 .rounded;
+    &:hover {
+      @apply .bg-orange-400 .rounded;
+    }
+  }
+}

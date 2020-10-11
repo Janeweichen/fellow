@@ -5,15 +5,15 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby 2.7.0
 
-* System dependencies
+* Rails 6.0.3.3
 
-* Configuration
+* Vue.js
 
-* Database creation
+* Tailwind CSS
 
-* Database initialization
+* ActionCable
 
 * How to run the test suite
 

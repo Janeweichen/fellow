@@ -19,3 +19,40 @@ const imagePath = (name) => images(name, true)
 import 'scripts'
 import 'styles'
 
+// Vue.js 
+import Vue from 'vue/dist/vue.esm';
+import draggable from 'vuedraggable';
+import Rails from '@rails/ujs';
+import store from 'stores/list';
+import { mapGetters, mapActions } from 'vuex';
+import List from 'components/list';
+import Newlist from 'components/newlist';
+
+document.addEventListener("turbolinks:load", function(event) {
+  let el = document.querySelector('#board');
+  if (el) {
+    new Vue({
+        el,
+        store,
+        computed: {
+          lists: {
+            get() {
+              return this.$store.state.lists;
+            },
+            set(value) {
+              this.$store.commit('UPDATE_LISTS', value);
+            },
+          }
+        },
+        components: { List, Newlist,draggable },
+        methods: {
+          ...mapActions(["loadList", "moveList"]),
+        },
+          beforeMount() {
+            this.loadList();
+          
+         }
+      });
+  }
+})
+
